@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Hub Issue Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class=" h-screen flex items-center justify-center bg-gray-100 ">
+        
+        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+            <div class="flex flex-col items-center justify-center">
+            <img src="assets/github-logo.png" alt="" class="h-[100px] w-[100px]">
+            <h2 class="font-bold text-lg">GitHub Issues Tracker</h2>
+            <h3 class="text-[#64748B]">Sign in to manage your issues</h3>
+        </div>
+  <label class="label">Username</label>
+  <input type="text" class="input" placeholder="admin" id="userName" />
+  <p class="text-[#4A00FF]">Default:admin</p>
+
+  <label class="label">Password</label>
+  <input type="password" class="input" placeholder="Password" id="password" />
+  <p class="text-[#4A00FF]">Default:admin123</p>
+
+
+  <button class="btn btn-primary mt-4" onclick="signIn()">Sign in</button>
+
+  <div class="flex items-center my-6">
+    <hr class="flex-grow border-gray-300">
+    <span class="mx-4 text-gray-500 font-semibold">OR</span>
+    <hr class="flex-grow border-gray-300">
+  </div>
+  <div class="mx-auto text-[#64748B]">Demo Credentials:</div>
+  <div class="mx-auto bg-[#caced149] py-3 px-20 rounded-md">
+    <div class="font-semibold">Username:admin</div>
+    <div class="font-semibold">Password:admin123</div>
+  </div>
+</fieldset>
+    </div>
+
+
+
+
+    <script src="passCheck.js"></script>
+    <script src="issueTracker.js"></script>
+</body>
+</html>
