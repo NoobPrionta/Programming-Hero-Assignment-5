@@ -3,9 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Github Issue Tracker Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+<style>
+    *{
+        font-family: "Geist", sans-serif;
+    }
+</style>
 </head>
 <body>
-    <p>Hello</p>
+    <nav class="mb-3">
+        <div class="full-div flex justify-between">
+            <div class="left-nav flex items-center gap-2 mt-4 ml-5">
+                <div><img src="assets/github-logo.png" alt="" class="h-8 w-8"></div>
+                <div><p>Github Issues Tracker</p></div>
+            </div>
+            <div class="right-nav flex items-center gap-2 mr-5 mt-4">
+                <div>
+                    <label class="input">
+  <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="2.5"
+      fill="none"
+      stroke="currentColor"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.3-4.3"></path>
+    </g>
+  </svg>
+  <input type="search" required placeholder="Search issues" />
+</label>
+                </div>
+                <div>
+                    <button class="btn btn-primary items-center">+ New Issue</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- button filtering  -->
+    <div class="max-w-6xl mx-auto px-4 p-2 rounded-md bg-[#c6bbbb11] shadow-sm  ">
+        <button  class="btn btn-primary mr-2">All</button>
+        <button class="btn btn-primary mr-2">Open</button>
+        <button class="btn btn-primary">Closed</button>
+    </div>
+
+    <div class="flex justify-between max-w-6xl mx-auto px-4 p-6 bg-[#e4e4e731] mt-2 rounded-md shadow-sm ">
+        <div class="left flex items-center gap-2">
+            <div><img src="assets/Aperture.png" alt="" class="border rounded-full border-gray-400 p-1"></div>
+            <div>
+            <p class="font-semibold">50 Issues</p>
+            <p class="text-[#64748B]">Track and manage your project issues</p>
+        </div>
+        </div>
+        
+        <div class="right flex gap-6 mr-4 items-center">
+            <div class="items-center flex gap-2">
+                <div class="flex items-center gap-1">
+                    <div><span class="w-4 h-4 bg-green-500 rounded-full inline-block"></span></div>
+            <div>Open</div>
+                </div>
+            <div class="flex items-center gap-1">
+                <div><span class="w-4 h-4 bg-red-500 rounded-full inline-block"></span></div>
+            <div>Close</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+<!-- cart details issues  -->
+    <div id="issues" class="grid grid-cols-4 gap-6 mt-4 max-w-6xl mx-auto px-4 p-2   ">
+
+        <!-- <div class="bg-[#EFEFEF] p-2 rounded-md">
+            <div class="flex justify-between">
+                <div class="cart-left">
+                    <img src="assets/Open-Status.png" alt="">
+                </div>
+                <div class="cart-right">
+                    <div class="badge badge-outline badge-secondary">High</div>
+                </div>
+            </div>
+            <h2 id="title" class="font-semibold pt-2">Fix navigation menu on mobile devices</h2>
+            <p id="description" class="text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices...</p>
+            <div class="flex gap-4 pt-2">
+                <div class="badge badge-outline badge-secondary bg-red-200 font-semibold ">BUG</div>
+                <div class="badge badge-outline badge-warning bg-yellow-200 font-semibold text-[#D97706]">Help Wanted</div>
+            </div>
+            <hr class="mt-2 text-gray-300">
+            <div id="author" class="text-gray-400"><p>#1
+by john_doe</p></div>
+<div id="date" class="text-gray-400"><p>1/15/2024</p></div>
+        </div> -->
+
+
+    </div>
+    
+    
+    <script src="issueTracker.js"></script>
 </body>
 </html>
