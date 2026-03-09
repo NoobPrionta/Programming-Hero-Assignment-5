@@ -148,7 +148,6 @@ showIssues(closedIssues);
 // search issues
 async function searchIssues(searchText){
 
-// show loader
 document.getElementById("loader").classList.remove("hidden");
 
 const response = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`);
@@ -156,7 +155,6 @@ const result = await response.json();
 
 showIssues(result.data);
 
-// hide loader
 document.getElementById("loader").classList.add("hidden");
 
 }
@@ -185,16 +183,19 @@ searchIssues(searchText);
 });
 
 
-// open modal
-function openModal(issueId){
+// 🔥 UPDATED openModal using Single Issue API
+async function openModal(issueId){
 
-let issue = allIssues.find(i => i.id === issueId);
+const response = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${issueId}`);
+const result = await response.json();
+
+let issue = result.data;
 
 document.getElementById("modalTitle").innerText = issue.title;
 document.getElementById("modalDescription").innerText = issue.description;
 document.getElementById("modalAuthor").innerText = issue.author;
 document.getElementById("modalDate").innerText = new Date(issue.createdAt).toLocaleDateString();
-document.getElementById("modalAssignee").innerText = issue.assignee;
+document.getElementById("modalAssignee").innerText = issue.assignee || issue.author;
 
 // status badge
 let status = document.getElementById("modalStatus");

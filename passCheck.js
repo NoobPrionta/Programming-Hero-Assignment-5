@@ -1,5 +1,4 @@
 
-
 function signIn(){
     let username = document.getElementById("userName").value;
 
