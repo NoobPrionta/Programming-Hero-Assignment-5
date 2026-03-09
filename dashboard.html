@@ -39,7 +39,7 @@
       <path d="m21 21-4.3-4.3"></path>
     </g>
   </svg>
-  <input type="search" required placeholder="Search issues" />
+  <input id="searchInput" type="search" required placeholder="Search issues" />
 </label>
                 </div>
                 <div>
@@ -51,16 +51,16 @@
 
     <!-- button filtering  -->
     <div class="max-w-6xl mx-auto px-4 p-2 rounded-md bg-[#c6bbbb11] shadow-sm  ">
-        <button  class="btn btn-primary mr-2">All</button>
-        <button class="btn btn-primary mr-2">Open</button>
-        <button class="btn btn-primary">Closed</button>
+        <button id="allBtn" class="filterBtn btn bg-blue-600 text-white mr-2">All</button>
+        <button id="openBtn" class="filterBtn btn bg-white text-blue-600 mr-2">Open</button>
+        <button id="closedBtn" class="filterBtn btn bg-white text-blue-600">Closed</button>
     </div>
 
     <div class="flex justify-between max-w-6xl mx-auto px-4 p-6 bg-[#e4e4e731] mt-2 rounded-md shadow-sm ">
         <div class="left flex items-center gap-2">
             <div><img src="assets/Aperture.png" alt="" class="border rounded-full border-gray-400 p-1"></div>
             <div>
-            <p class="font-semibold">50 Issues</p>
+            <p id="issueCount" class="font-semibold">50 Issues</p>
             <p class="text-[#64748B]">Track and manage your project issues</p>
         </div>
         </div>
@@ -105,6 +105,47 @@ by john_doe</p></div>
 
 
     </div>
+
+
+    <div id="issueModal" class="fixed inset-0 hidden items-center justify-center bg-black/30 backdrop-blur-sm z-50">
+
+<div class="bg-white w-[650px] rounded-xl shadow-2xl p-6 relative">
+
+<h2 id="modalTitle" class="text-2xl font-bold mb-2"></h2>
+
+<div class="flex items-center gap-3 text-sm text-gray-500 mb-4">
+<span id="modalStatus" class="bg-green-500 text-white px-3 py-1 rounded-full text-xs"></span>
+<span>Opened by <span id="modalAuthor"></span></span>
+<span>•</span>
+<span id="modalDate"></span>
+</div>
+
+<div id="modalLabels" class="flex gap-2 mb-4"></div>
+
+<p id="modalDescription" class="text-gray-600 mb-6"></p>
+
+<div class="bg-gray-100 rounded-lg p-4 flex justify-between">
+
+<div>
+<p class="text-gray-500 text-sm">Assignee:</p>
+<p id="modalAssignee" class="font-semibold"></p>
+</div>
+
+<div>
+<p class="text-gray-500 text-sm">Priority:</p>
+<span id="modalPriority" class="px-3 py-1 rounded-full text-xs font-semibold"></span>
+</div>
+
+</div>
+
+<div class="flex justify-end mt-6">
+<button onclick="closeModal()" class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700">
+Close
+</button>
+</div>
+
+</div>
+</div>
     
     
     <script src="issueTracker.js"></script>
