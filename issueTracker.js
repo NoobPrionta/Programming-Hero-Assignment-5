@@ -1,11 +1,19 @@
 let allIssues = [];
 
 async function loadIssues(){
-    const response = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
-    const result = await response.json();
 
-    allIssues = result.data;
-    showIssues(allIssues);
+// show loader
+document.getElementById("loader").classList.remove("hidden");
+
+const response = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
+const result = await response.json();
+
+allIssues = result.data;
+showIssues(allIssues);
+
+// hide loader
+document.getElementById("loader").classList.add("hidden");
+
 }
 
 loadIssues();
@@ -140,10 +148,16 @@ showIssues(closedIssues);
 // search issues
 async function searchIssues(searchText){
 
+// show loader
+document.getElementById("loader").classList.remove("hidden");
+
 const response = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`);
 const result = await response.json();
 
 showIssues(result.data);
+
+// hide loader
+document.getElementById("loader").classList.add("hidden");
 
 }
 
