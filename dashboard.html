@@ -20,11 +20,13 @@
 <body>
     <nav class="mb-3">
         <div class="full-div flex justify-between">
-            <div class="left-nav flex items-center gap-2 mt-4 ml-5">
-                <div><img src="assets/github-logo.png" alt="" class="h-8 w-8"></div>
+            <!-- <div class="left-nav flex items-center gap-2 mt-4 ml-5"> -->
+                <div class="left-nav grid grid-cols-1 lg:flex lg:items-center gap-2 mt-4 ml-5">
+                <div class="sm:flex flex-col justify-between items-center"><img src="assets/github-logo.png" alt="" class="h-8 w-8"></div>
                 <div><p>Github Issues Tracker</p></div>
             </div>
-            <div class="right-nav flex items-center gap-2 mr-5 mt-4">
+            <!-- <div class="right-nav flex items-center gap-2 mr-5 mt-4"> -->
+                <div class="right-nav grid grid-cols-1 lg:flex lg:items-center gap-2 mr-5 mt-4">
                 <div>
                     <label class="input">
   <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -43,7 +45,7 @@
 </label>
                 </div>
                 <div>
-                    <button class="btn btn-primary items-center">+ New Issue</button>
+                    <button class="btn btn-primary items-center ">+ New Issue</button>
                 </div>
             </div>
         </div>
@@ -66,7 +68,7 @@
         </div>
         
         <div class="right flex gap-6 mr-4 items-center">
-            <div class="items-center flex gap-2">
+                <div class="grid grid-cols-1 sm:flex sm:items-center gap-2">
                 <div class="flex items-center gap-1">
                     <div><span class="w-4 h-4 bg-green-500 rounded-full inline-block"></span></div>
             <div>Open</div>
@@ -86,7 +88,8 @@
 </div>
 
 <!-- cart details issues  -->
-    <div id="issues" class="grid grid-cols-4 gap-6 mt-4 max-w-6xl mx-auto px-4 p-2   ">
+    <!-- <div id="issues" class="grid grid-cols-4 gap-6 mt-4 max-w-6xl mx-auto px-4 p-2   "> -->
+        <div id="issues" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4 max-w-6xl mx-auto px-4 p-2">
 
         <!-- <div class="bg-[#EFEFEF] p-2 rounded-md">
             <div class="flex justify-between">
